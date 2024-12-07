@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de Impedancia</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Impedancia</h1>
+        <form id="impedanceForm">
+            <label for="tipoCircuito">Configuración de Circuito:</label>
+            <select id="tipoCircuito">
+                <option value="serie">Serie</option>
+                <option value="paralelo">Paralelo</option>
+            </select>
+            
+            <label for="voltaje">Fuente de Alimentación (V):</label>
+            <input type="number" id="voltaje" required>
+            <select id="unidadV">
+                <option value="1">V</option>
+                <option value="1e3">kV</option>
+            </select>
+            
+            <label for="resistencia">Resistencia (R):</label>
+            <input type="number" id="resistencia" required>
+            <select id="unidadR">
+                <option value="1">Ω</option>
+                <option value="1e3">kΩ</option>
+                <option value="1e6">MΩ</option>
+            </select>
+        
+            <label for="frecuencia">Frecuencia (f):</label>
+            <input type="number" id="frecuencia" required>
+            <select id="unidadF">
+                <option value="1">Hz</option>
+                <option value="1e3">kHz</option>
+                <option value="1e6">MHz</option>
+            </select>
+        
+            <label for="inductancia">Inductancia (L):</label>
+            <input type="number" id="inductancia" required>
+            <select id="unidadL">
+                <option value="1">H</option>
+                <option value="1e-3">mH</option>
+                <option value="1e-6">μH</option>
+            </select>
+        
+            <label for="capacitancia">Capacitancia (C):</label>
+            <input type="number" id="capacitancia" required>
+            <select id="unidadC">
+                <option value="1">F</option>
+                <option value="1e-6">μF</option>
+                <option value="1e-9">nF</option>
+            </select>
+        
+            <button type="button" onclick="calcularImpedancia()">Calcular Impedancia</button>
+        </form>
+        
+        <div id="resultado" class="resultado">
+            <h2>Resultado:</h2>
+            <p id="tipoCircuitoResultante">Tipo de Circuito: N/A</p>
+            <p id="impedanciaTotal">Z = 0 Ω</p>
+            <p id="angulo">Ángulo = 0°</p>
+            <p id="corrienteTotal">I = 0 A</p>
+        </div>
+    </div>
+
+    <script src="calcularImpedancia.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
